@@ -10,7 +10,7 @@ require("./Modals/db")
 const PORT=process.env.PORT || 8080;
 
 app.get('/',(req,res)=>{
-    res.send('Pong');
+    res.send('Hello World');
 })
 
 app.use(bodyParser.json());
