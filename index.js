@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 const bodyParser=require('body-parser');
 const cors=require('cors');
+
 const AuthRouter = require('./Routes/AuthRouter');
 const ProductRouter = require('./Routes/ProductRouter');
 require('dotenv').config();
@@ -12,7 +13,8 @@ app.get('/',(req,res)=>{
     res.send('Hello World');
 })
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: "*" })); 
+
 
 app.use('/auth',AuthRouter)
 app.use('/products',ProductRouter)
